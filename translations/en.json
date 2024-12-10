@@ -1,0 +1,98 @@
+{
+    "meta": {
+        "title": "Geodézia Ltd. - Land Surveying and Cartography",
+        "description": "Professional land surveying and cartography services",
+        "logoAlt": "Geodézia Ltd. logo"
+    },
+    "languages": {
+        "hungarian": "Magyar",
+        "english": "English",
+        "russian": "Русский"
+    },
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Land Surveying and Cartography Expertise",
+        "subtitle": "Precise measurements, accurate maps, reliable data",
+        "cta": "Learn More"
+    },
+    "services": {
+        "title": "Our Services",
+        "surveying": {
+            "title": "Land Surveying",
+            "description": "Property boundary surveys, building surveys, land division, land use changes"
+        },
+        "mapping": {
+            "title": "Cartography",
+            "description": "Digital map creation, GIS database development and management"
+        },
+        "scanning": {
+            "title": "3D Scanning",
+            "description": "3D surveying and modeling of buildings and facilities"
+        }
+    },
+    "stats": {
+        "experience": "Years of Experience",
+        "projects": "Completed Projects",
+        "clients": "Satisfied Clients",
+        "experts": "Professionals"
+    },
+    "projects": {
+        "title": "Recent Projects",
+        "project1": {
+            "title": "Urban Survey",
+            "description": "Complex urban cartography project",
+            "imageAlt": "Urban survey project image"
+        },
+        "project2": {
+            "title": "Industrial Park",
+            "description": "3D survey of industrial facility",
+            "imageAlt": "Industrial park project image"
+        },
+        "project3": {
+            "title": "Cadastral Survey",
+            "description": "Large-scale land registry work",
+            "imageAlt": "Cadastral survey project image"
+        }
+    },
+    "about": {
+        "title": "About Us",
+        "description": "Geodézia Ltd. has over 25 years of professional experience in land surveying and cartography. Our team consists of highly qualified professionals who use the most modern technologies to ensure accurate and reliable results.",
+        "cta": "Learn More"
+    },
+    "contact": {
+        "title": "Contact",
+        "info": {
+            "title": "Contact Information",
+            "address": "1234 Budapest, Example Street 123.",
+            "phone": "+36 1 234 5678",
+            "email": "info@geodeziakft.hu"
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Send",
+            "placeholders": {
+                "name": "Your name",
+                "email": "Your email address",
+                "message": "Type your message here..."
+            }
+        }
+    },
+    "footer": {
+        "description": "Professional land surveying and cartography services with over 25 years of experience.",
+        "quickLinks": {
+            "title": "Quick Links"
+        },
+        "contact": {
+            "title": "Contact"
+        },
+        "copyright": "© 2024 Geodézia Ltd. All rights reserved."
+    }
+}

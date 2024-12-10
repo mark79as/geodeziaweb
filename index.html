@@ -4,143 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
-    <title>Geodézia Kft. - Földmérés és Térképészet</title>
+    <title data-lang-key="meta.title">Geodézia Kft. - Földmérés és Térképészet</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Inter betűtípus importálása a CDN-ről */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        :root {
-            --primary-color: #00aeef;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            padding-top: 76px;
-        }
-
-        .dark {
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-        }
-
-        .light {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f3f4f6;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .stats-card {
-            background: var(--bg-secondary);
-        }
-
-        .service-card {
-            background: var(--bg-secondary);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .primary-btn {
-            background-color: var(--primary-color);
-        }
-
-        .primary-text {
-            color: var(--primary-color);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 40%; /* Csökkentett magasság */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translateY(-50%);
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        @media (prefers-color-scheme: dark) {
-            .dark img.dark\:block {
-                display: block;
-            }
-            .dark img.dark\:hidden {
-                display: none;
-            }
-        }
-
-        /* Light mode explicit beállítások */
-        .light img.dark\:block {
-            display: none;
-        }
-        .light img.dark\:hidden {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Fejléc -->
+    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 py-4 z-50 bg-opacity-95" style="background: var(--bg-secondary);">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <!-- Logo bal oldalon -->
+                <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <img src="geodeziakft-logo-vilagos.png" alt="Geodézia Kft. Logo" class="h-12 block dark:hidden">
-                    <img src="geodeziakft-logo-sotet.png" alt="Geodézia Kft. Logo" class="h-12 hidden dark:block">
+                    <img src="images/logo-light.png" alt="Logo" class="h-12 block dark:hidden" data-lang-key="meta.logoAlt">
+                    <img src="images/logo-dark.png" alt="Logo" class="h-12 hidden dark:block" data-lang-key="meta.logoAlt">
                 </div>
                 
-                <!-- Központi menü -->
+                <!-- Navigation -->
                 <nav class="hidden md:flex items-center justify-center space-x-8">
-                    <a href="#" class="hover:text-[#00aeef] font-medium">Főoldal</a>
-                    <a href="#szolgaltatasok" class="hover:text-[#00aeef] font-medium">Szolgáltatások</a>
-                    <a href="#projektek" class="hover:text-[#00aeef] font-medium">Projektek</a>
-                    <a href="#rolunk" class="hover:text-[#00aeef] font-medium">Rólunk</a>
+                    <a href="#" class="hover:text-[#00aeef] font-medium" data-lang-key="nav.home">Főoldal</a>
+                    <a href="#services" class="hover:text-[#00aeef] font-medium" data-lang-key="nav.services">Szolgáltatások</a>
+                    <a href="#projects" class="hover:text-[#00aeef] font-medium" data-lang-key="nav.projects">Projektek</a>
+                    <a href="#about" class="hover:text-[#00aeef] font-medium" data-lang-key="nav.about">Rólunk</a>
                 </nav>
                 
-                <!-- Jobb oldali elemek -->
+                <!-- Right side elements -->
                 <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="p-2 rounded-lg" style="background: var(--bg-primary);">
+                    <!-- Language selector -->
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <span class="current-language">HU</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="language-options">
+                            <div class="language-option" data-lang="hu">
+                                <span>🇭🇺</span>
+                                <span data-lang-key="languages.hungarian">Magyar</span>
+                            </div>
+                            <div class="language-option" data-lang="en">
+                                <span>🇬🇧</span>
+                                <span data-lang-key="languages.english">English</span>
+                            </div>
+                            <div class="language-option" data-lang="ru">
+                                <span>🇷🇺</span>
+                                <span data-lang-key="languages.russian">Русский</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg" style="background: var(--bg-primary);" aria-label="Theme Toggle">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path class="dark:hidden" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            <path class="hidden dark:block" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            <path class="dark:hidden" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            <path class="hidden dark:block" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
                         </svg>
                     </button>
-                    <a href="#kapcsolat" class="primary-btn hover:opacity-90 text-white font-bold py-2 px-6 rounded-lg">
+                    
+                    <!-- Contact button -->
+                    <a href="#contact" class="primary-btn hover:opacity-90 text-white font-bold py-2 px-6 rounded-lg" data-lang-key="nav.contact">
                         Kapcsolat
                     </a>
                 </div>
@@ -148,164 +70,164 @@
         </div>
     </header>
 
-    <!-- Videó szekció -->
+    <!-- Hero Section -->
     <section class="relative h-[40vh] overflow-hidden">
         <div class="video-container">
             <video autoplay muted loop playsinline>
-                <source src="geodeziakft-video.mp4" type="video/mp4">
+                <source src="videos/hero-video.mp4" type="video/mp4">
             </video>
             <div class="video-overlay">
-                <h1 class="text-5xl font-bold text-white mb-6">Földmérési és Térképészeti Szakértelem</h1>
-                <p class="text-xl text-white mb-8">Precíz mérések, pontos térképek, megbízható adatok</p>
-                <button class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg">
+                <h1 class="text-5xl font-bold text-white mb-6" data-lang-key="hero.title">Földmérési és Térképészeti Szakértelem</h1>
+                <p class="text-xl text-white mb-8" data-lang-key="hero.subtitle">Precíz mérések, pontos térképek, megbízható adatok</p>
+                <button class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg" data-lang-key="hero.cta">
                     Tudjon meg többet
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Szolgáltatások -->
-    <section id="szolgaltatasok" class="py-16">
+    <!-- Services -->
+    <section id="services" class="py-16 animate-on-scroll">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Szolgáltatásaink</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-lang-key="services.title">Szolgáltatásaink</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="service-card p-6 rounded-lg">
                     <div class="text-[#00aeef] text-4xl mb-4">📏</div>
-                    <h3 class="text-xl font-bold mb-3">Földmérés</h3>
-                    <p class="text-secondary">Telekhatár kimérés, épület feltüntetés, megosztás, művelési ág változás</p>
+                    <h3 class="text-xl font-bold mb-3" data-lang-key="services.surveying.title">Földmérés</h3>
+                    <p class="text-secondary" data-lang-key="services.surveying.description">Telekhatár kimérés, épület feltüntetés</p>
                 </div>
                 <div class="service-card p-6 rounded-lg">
                     <div class="text-[#00aeef] text-4xl mb-4">🗺️</div>
-                    <h3 class="text-xl font-bold mb-3">Térképészet</h3>
-                    <p class="text-secondary">Digitális térképek készítése, GIS adatbázisok létrehozása és kezelése</p>
+                    <h3 class="text-xl font-bold mb-3" data-lang-key="services.mapping.title">Térképészet</h3>
+                    <p class="text-secondary" data-lang-key="services.mapping.description">Digitális térképek készítése</p>
                 </div>
                 <div class="service-card p-6 rounded-lg">
                     <div class="text-[#00aeef] text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-3">3D Szkennelés</h3>
-                    <p class="text-secondary">Épületek, létesítmények 3D felmérése és modellezése</p>
+                    <h3 class="text-xl font-bold mb-3" data-lang-key="services.scanning.title">3D Szkennelés</h3>
+                    <p class="text-secondary" data-lang-key="services.scanning.description">3D felmérés és modellezés</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statisztikák -->
-    <section class="py-16" style="background: var(--bg-secondary);">
+    <!-- Stats -->
+    <section class="py-16 stats-section animate-on-scroll">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
+                <div class="text-center stat-card">
                     <h3 class="text-4xl font-bold text-[#00aeef]">25+</h3>
-                    <p class="text-secondary mt-2">Év tapasztalat</p>
+                    <p class="text-secondary mt-2" data-lang-key="stats.experience">Év tapasztalat</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center stat-card">
                     <h3 class="text-4xl font-bold text-[#00aeef]">1000+</h3>
-                    <p class="text-secondary mt-2">Befejezett projekt</p>
+                    <p class="text-secondary mt-2" data-lang-key="stats.projects">Befejezett projekt</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center stat-card">
                     <h3 class="text-4xl font-bold text-[#00aeef]">500+</h3>
-                    <p class="text-secondary mt-2">Elégedett ügyfél</p>
+                    <p class="text-secondary mt-2" data-lang-key="stats.clients">Elégedett ügyfél</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center stat-card">
                     <h3 class="text-4xl font-bold text-[#00aeef]">50+</h3>
-                    <p class="text-secondary mt-2">Szakember</p>
+                    <p class="text-secondary mt-2" data-lang-key="stats.experts">Szakember</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projektek -->
-    <section id="projektek" class="py-16">
+    <!-- Projects -->
+    <section id="projects" class="py-16 animate-on-scroll">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Legutóbbi Projektjeink</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-lang-key="projects.title">Legutóbbi Projektjeink</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rounded-lg overflow-hidden">
-                    <img src="projekt1.png" alt="Projekt 1" class="w-full h-48 object-cover">
-                    <div class="p-4" style="background: var(--bg-secondary);">
-                        <h3 class="text-xl font-bold mb-2">Városi Felmérés</h3>
-                        <p class="text-secondary">Komplex városi térképészeti projekt</p>
+                <div class="project-card">
+                    <img src="images/projects/project1.png" alt="" data-lang-key="projects.project1.imageAlt" class="project-image">
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="projects.project1.title">Városi Felmérés</h3>
+                        <p class="text-secondary" data-lang-key="projects.project1.description">Komplex városi térképészeti projekt</p>
                     </div>
                 </div>
-                <div class="rounded-lg overflow-hidden">
-                    <img src="projekt2.png" alt="Projekt 2" class="w-full h-48 object-cover">
-                    <div class="p-4" style="background: var(--bg-secondary);">
-                        <h3 class="text-xl font-bold mb-2">Ipari Park</h3>
-                        <p class="text-secondary">Ipari létesítmény 3D felmérése</p>
+                <div class="project-card">
+                    <img src="images/projects/project2.png" alt="" data-lang-key="projects.project2.imageAlt" class="project-image">
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="projects.project2.title">Ipari Park</h3>
+                        <p class="text-secondary" data-lang-key="projects.project2.description">Ipari létesítmény 3D felmérése</p>
                     </div>
                 </div>
-                <div class="rounded-lg overflow-hidden">
-                    <img src="projekt3.png" alt="Projekt 3" class="w-full h-48 object-cover">
-                    <div class="p-4" style="background: var(--bg-secondary);">
-                        <h3 class="text-xl font-bold mb-2">Kataszteri Felmérés</h3>
-                        <p class="text-secondary">Nagyléptékű földhivatali munka</p>
+                <div class="project-card">
+                    <img src="images/projects/project3.png" alt="" data-lang-key="projects.project3.imageAlt" class="project-image">
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="projects.project3.title">Kataszteri Felmérés</h3>
+                        <p class="text-secondary" data-lang-key="projects.project3.description">Nagyléptékű földhivatali munka</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rólunk -->
-    <section id="rolunk" class="py-16" style="background: var(--bg-secondary);">
+    <!-- About -->
+    <section id="about" class="py-16 animate-on-scroll" style="background: var(--bg-secondary);">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-6">Rólunk</h2>
-                <p class="text-secondary mb-8">
+                <h2 class="text-3xl font-bold mb-6" data-lang-key="about.title">Rólunk</h2>
+                <p class="text-secondary mb-8" data-lang-key="about.description">
                     A Geodézia Kft. több mint 25 éves szakmai tapasztalattal rendelkezik a földmérés és térképészet területén. 
                     Csapatunk magasan képzett szakemberekből áll, akik a legmodernebb technológiákat használják a pontos és 
                     megbízható eredmények érdekében.
                 </p>
-                <button class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg">
+                <button class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg" data-lang-key="about.cta">
                     Tudjon meg többet
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Kapcsolat -->
-    <section id="kapcsolat" class="py-16">
+    <!-- Contact -->
+    <section id="contact" class="py-16">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Kapcsolat</h2>
+                <h2 class="text-3xl font-bold text-center mb-12" data-lang-key="contact.title">Kapcsolat</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Kapcsolati információk -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Elérhetőségeink</h3>
+                    <!-- Contact Info -->
+                    <div class="animate-on-scroll">
+                        <h3 class="text-xl font-bold mb-4" data-lang-key="contact.info.title">Elérhetőségeink</h3>
                         <div class="space-y-4">
                             <p class="flex items-center">
                                 <svg class="w-6 h-6 mr-3 text-[#00aeef]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
-                                1234 Budapest, Példa utca 123.
+                                <span data-lang-key="contact.info.address">1234 Budapest, Példa utca 123.</span>
                             </p>
                             <p class="flex items-center">
                                 <svg class="w-6 h-6 mr-3 text-[#00aeef]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                                 </svg>
-                                +36 1 234 5678
+                                <span data-lang-key="contact.info.phone">+36 1 234 5678</span>
                             </p>
                             <p class="flex items-center">
                                 <svg class="w-6 h-6 mr-3 text-[#00aeef]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
-                                info@geodeziakft.hu
+                                <span data-lang-key="contact.info.email">info@geodeziakft.hu</span>
                             </p>
                         </div>
                     </div>
-                    <!-- Kapcsolati űrlap -->
-                    <div>
-                        <form class="space-y-4">
+                    <!-- Contact Form -->
+                    <div class="animate-on-scroll">
+                        <form id="contact-form" class="space-y-4">
                             <div>
-                                <label class="block text-sm font-medium mb-2">Név</label>
-                                <input type="text" class="w-full p-3 rounded-lg" style="background: var(--bg-secondary);">
+                                <label class="block text-sm font-medium mb-2" data-lang-key="contact.form.name">Név</label>
+                                <input type="text" name="name" class="form-input" data-lang-key-placeholder="contact.form.placeholders.name">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium mb-2">Email</label>
-                                <input type="email" class="w-full p-3 rounded-lg" style="background: var(--bg-secondary);">
+                                <label class="block text-sm font-medium mb-2" data-lang-key="contact.form.email">Email</label>
+                                <input type="email" name="email" class="form-input" data-lang-key-placeholder="contact.form.placeholders.email">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium mb-2">Üzenet</label>
-                                <textarea class="w-full p-3 rounded-lg h-32" style="background: var(--bg-secondary);"></textarea>
+                                <label class="block text-sm font-medium mb-2" data-lang-key="contact.form.message">Üzenet</label>
+                                <textarea name="message" class="form-input h-32" data-lang-key-placeholder="contact.form.placeholders.message"></textarea>
                             </div>
-                            <button type="submit" class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg w-full">
+                            <button type="submit" class="primary-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-lg w-full" data-lang-key="contact.form.submit">
                                 Küldés
                             </button>
                         </form>
@@ -315,64 +237,46 @@
         </div>
     </section>
 
-    <!-- Lábléc -->
-    <footer class="py-12" style="background: var(--bg-secondary);">
+    <!-- Footer -->
+    <footer class="footer py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Footer Logo and Description -->
                 <div>
-                    <img src="geodeziakft-logo-vilagos.png" alt="Geodézia Kft. Logo" class="h-12 block dark:hidden">
-                    <img src="geodeziakft-logo-sotet.png" alt="Geodézia Kft. Logo" class="h-12 hidden dark:block">
-                    <p class="text-secondary">
+                    <img src="images/logo-light.png" alt="Logo" class="h-12 block dark:hidden" data-lang-key="meta.logoAlt">
+                    <img src="images/logo-dark.png" alt="Logo" class="h-12 hidden dark:block" data-lang-key="meta.logoAlt">
+                    <p class="text-secondary mt-4" data-lang-key="footer.description">
                         Professzionális földmérési és térképészeti szolgáltatások több mint 25 éves tapasztalattal.
                     </p>
                 </div>
+                <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Gyors linkek</h3>
+                    <h3 class="text-xl font-bold mb-4" data-lang-key="footer.quickLinks.title">Gyors linkek</h3>
                     <nav class="space-y-2">
-                        <a href="#szolgaltatasok" class="block text-secondary hover:text-[#00aeef]">Szolgáltatások</a>
-                        <a href="#projektek" class="block text-secondary hover:text-[#00aeef]">Projektek</a>
-                        <a href="#rolunk" class="block text-secondary hover:text-[#00aeef]">Rólunk</a>
-                        <a href="#kapcsolat" class="block text-secondary hover:text-[#00aeef]">Kapcsolat</a>
+                        <a href="#services" class="footer-link block" data-lang-key="nav.services">Szolgáltatások</a>
+                        <a href="#projects" class="footer-link block" data-lang-key="nav.projects">Projektek</a>
+                        <a href="#about" class="footer-link block" data-lang-key="nav.about">Rólunk</a>
+                        <a href="#contact" class="footer-link block" data-lang-key="nav.contact">Kapcsolat</a>
                     </nav>
                 </div>
+                <!-- Footer Contact -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Kapcsolat</h3>
+                    <h3 class="text-xl font-bold mb-4" data-lang-key="footer.contact.title">Kapcsolat</h3>
                     <div class="space-y-2 text-secondary">
-                        <p>1234 Budapest, Példa utca 123.</p>
-                        <p>+36 1 234 5678</p>
-                        <p>info@geodeziakft.hu</p>
+                        <p data-lang-key="contact.info.address">1234 Budapest, Példa utca 123.</p>
+                        <p data-lang-key="contact.info.phone">+36 1 234 5678</p>
+                        <p data-lang-key="contact.info.email">info@geodeziakft.hu</p>
                     </div>
                 </div>
             </div>
+            <!-- Copyright -->
             <div class="border-t border-gray-700 pt-8 text-center text-secondary">
-                <p>&copy; 2024 Geodézia Kft. Minden jog fenntartva.</p>
+                <p data-lang-key="footer.copyright">&copy; 2024 Geodézia Kft. Minden jog fenntartva.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript a témaváltáshoz -->
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        // Téma betöltése a localStorage-ból és az oldal inicializálása
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        if (savedTheme === 'light') {
-            html.classList.remove('dark');
-            html.classList.add('light');
-        } else {
-            html.classList.remove('light');
-            html.classList.add('dark');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            html.classList.remove(currentTheme);
-            html.classList.add(newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

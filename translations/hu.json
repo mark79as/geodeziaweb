@@ -1,0 +1,98 @@
+{
+    "meta": {
+        "title": "Geodézia Kft. - Földmérés és Térképészet",
+        "description": "Professzionális földmérési és térképészeti szolgáltatások",
+        "logoAlt": "Geodézia Kft. logó"
+    },
+    "languages": {
+        "hungarian": "Magyar",
+        "english": "English",
+        "russian": "Русский"
+    },
+    "nav": {
+        "home": "Főoldal",
+        "services": "Szolgáltatások",
+        "projects": "Projektek",
+        "about": "Rólunk",
+        "contact": "Kapcsolat"
+    },
+    "hero": {
+        "title": "Földmérési és Térképészeti Szakértelem",
+        "subtitle": "Precíz mérések, pontos térképek, megbízható adatok",
+        "cta": "Tudjon meg többet"
+    },
+    "services": {
+        "title": "Szolgáltatásaink",
+        "surveying": {
+            "title": "Földmérés",
+            "description": "Telekhatár kimérés, épület feltüntetés, megosztás, művelési ág változás"
+        },
+        "mapping": {
+            "title": "Térképészet",
+            "description": "Digitális térképek készítése, GIS adatbázisok létrehozása és kezelése"
+        },
+        "scanning": {
+            "title": "3D Szkennelés",
+            "description": "Épületek, létesítmények 3D felmérése és modellezése"
+        }
+    },
+    "stats": {
+        "experience": "Év tapasztalat",
+        "projects": "Befejezett projekt",
+        "clients": "Elégedett ügyfél",
+        "experts": "Szakember"
+    },
+    "projects": {
+        "title": "Legutóbbi Projektjeink",
+        "project1": {
+            "title": "Városi Felmérés",
+            "description": "Komplex városi térképészeti projekt",
+            "imageAlt": "Városi felmérés projekt képe"
+        },
+        "project2": {
+            "title": "Ipari Park",
+            "description": "Ipari létesítmény 3D felmérése",
+            "imageAlt": "Ipari park projekt képe"
+        },
+        "project3": {
+            "title": "Kataszteri Felmérés",
+            "description": "Nagyléptékű földhivatali munka",
+            "imageAlt": "Kataszteri felmérés projekt képe"
+        }
+    },
+    "about": {
+        "title": "Rólunk",
+        "description": "A Geodézia Kft. több mint 25 éves szakmai tapasztalattal rendelkezik a földmérés és térképészet területén. Csapatunk magasan képzett szakemberekből áll, akik a legmodernebb technológiákat használják a pontos és megbízható eredmények érdekében.",
+        "cta": "Tudjon meg többet"
+    },
+    "contact": {
+        "title": "Kapcsolat",
+        "info": {
+            "title": "Elérhetőségeink",
+            "address": "1234 Budapest, Példa utca 123.",
+            "phone": "+36 1 234 5678",
+            "email": "info@geodeziakft.hu"
+        },
+        "form": {
+            "name": "Név",
+            "email": "Email",
+            "message": "Üzenet",
+            "submit": "Küldés",
+            "placeholders": {
+                "name": "Az Ön neve",
+                "email": "Az Ön email címe",
+                "message": "Írja ide üzenetét..."
+            }
+        }
+    },
+    "footer": {
+        "description": "Professzionális földmérési és térképészeti szolgáltatások több mint 25 éves tapasztalattal.",
+        "quickLinks": {
+            "title": "Gyors linkek"
+        },
+        "contact": {
+            "title": "Kapcsolat"
+        },
+        "copyright": "© 2024 Geodézia Kft. Minden jog fenntartva."
+    }
+}
