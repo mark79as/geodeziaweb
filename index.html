@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geodézia Kft.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'DIN Pro';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/DIN/1.0/DINPro.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --accent-color: #00A3E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DIN Pro', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .maintenance-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #000;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .status-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .map-container {
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin: 1rem 0;
+        }
+
+        .contact-label {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .contact-value {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value:hover {
+            color: var(--accent-color);
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="maintenance-box">
+            <img src="geodeziakft-logo.png" alt="Geodézia Kft. logó" class="logo">
+            <h1>Kedves Látogató!</h1>
+            <div class="accent-line"></div>
+            <p class="status-message">
+                Weboldalunk jelenleg karbantartás alatt áll.<br>
+                A munkálatok ideje alatt az alábbi elérhetőségeken állunk rendelkezésére:
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Telefon:</span>
+                    <a href="tel:+3674529390" class="contact-value">+36 74 529 390</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:info@geodeziakft.hu" class="contact-value">info@geodeziakft.hu</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Cím:</span>
+                    <a href="https://maps.app.goo.gl/szb9SzmsohSjyZUN9" class="contact-value" target="_blank">7100 Szekszárd, Keselyűsi út 9.</a>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.99045414512!2d18.722195816139433!3d46.34608770668479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4742e5220d2544dd%3A0xf8c49fd2e76bd903!2sGeod%C3%A9zia%20Kft.!5e0!3m2!1shu!2shu!4v1733754729800!5m2!1shu!2shu" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
