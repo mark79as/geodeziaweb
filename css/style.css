@@ -109,8 +109,7 @@ body {
 /* Video container styles */
 .video-container {
     position: relative;
-    padding-bottom: 40%;
-    height: 0;
+    height: calc(100vh - 76px);
     overflow: hidden;
 }
 
@@ -241,7 +240,7 @@ body {
 /* Responsive styles */
 @media (max-width: 768px) {
     .video-container {
-        padding-bottom: 60%;
+        height: calc(100vh - 76px);
     }
 
     .video-overlay {
