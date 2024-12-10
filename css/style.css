@@ -240,7 +240,7 @@ body {
 /* Responsive styles */
 @media (max-width: 768px) {
     .video-container {
-        height: calc(100vh - 76px);
+        height: 50vh;
     }
 
     .video-overlay {
