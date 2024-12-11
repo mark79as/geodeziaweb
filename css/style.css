@@ -4,10 +4,11 @@
 /* Root variables */
 :root {
     --primary-color: #00aeef;
-    --transition-speed: 0.3s;
     --header-height: 76px;
+    --hover-transition: 0.2s;
 }
 
+/* Text colors explicit */
 body,
 p,
 h1, h2, h3, h4, h5, h6,
@@ -19,6 +20,46 @@ label,
 .project-card,
 .stat-card {
     color: var(--text-primary);
+}
+
+/* Background colors explicit */
+body,
+.video-overlay,
+.language-btn,
+.language-options,
+.project-card,
+.form-input,
+textarea,
+.services-section,
+.projects-section,
+.contact-section,
+.bg-primary {
+    background-color: var(--bg-primary);
+}
+
+.header,
+.language-options,
+.service-card,
+.project-card,
+.stats-section,
+.stats-section h2,
+.stats-section .stat-card,
+.about-section,
+.footer,
+.theme-toggle:hover,
+.bg-secondary {
+    background-color: var(--bg-secondary);
+}
+
+/* Theme toggle specific background */
+.theme-toggle {
+    background-color: var(--bg-primary);
+}
+
+/* Form inputs specific background */
+.form-input,
+textarea {
+    background-color: var(--input-bg);
 }
 
 /* Dark theme variables */
@@ -48,17 +89,12 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding-top: var(--header-height);
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Header styles */
 .header {
-    background-color: var(--bg-secondary);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border-color);
-    transition: background-color var(--transition-speed);
     height: var(--header-height);
 }
 
@@ -78,12 +114,12 @@ body {
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: all var(--transition-speed);
 }
 
 .language-btn:hover {
     background: var(--primary-color);
     color: white;
+    transition: background-color var(--hover-transition), color var(--hover-transition);
 }
 
 .language-options {
@@ -112,13 +148,13 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: var(--text-primary);
-    transition: all var(--transition-speed);
     border-radius: 0.25rem;
 }
 
 .language-option:hover {
     background: var(--primary-color);
     color: white;
+    transition: background-color var(--hover-transition), color var(--hover-transition);
 }
 
 /* Video container styles */
@@ -160,7 +196,6 @@ body {
     background: var(--bg-secondary);
     border-radius: 0.5rem;
     padding: 1.5rem;
-    transition: all var(--transition-speed);
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
 }
@@ -168,19 +203,14 @@ body {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform var(--hover-transition), box-shadow var(--hover-transition);
 }
 
 /* Stats section styles */
-.stats-section {
-    background: var(--bg-secondary);
-    transition: background-color var(--transition-speed);
-}
-
 .stat-card {
     padding: 1.5rem;
     text-align: center;
     border-radius: 0.5rem;
-    transition: all var(--transition-speed);
 }
 
 /* Project card styles */
@@ -189,11 +219,11 @@ body {
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: all var(--transition-speed);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    transition: transform var(--hover-transition);
 }
 
 .project-image {
@@ -214,13 +244,13 @@ body {
     border: 1px solid var(--border-color);
     background: var(--input-bg);
     color: var(--text-primary);
-    transition: all var(--transition-speed);
 }
 
 .form-input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(0, 174, 239, 0.2);
+    transition: border-color var(--hover-transition), box-shadow var(--hover-transition);
 }
 
 /* Button styles */
@@ -231,36 +261,33 @@ body {
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    transition: all var(--transition-speed);
 }
 
 .primary-btn:hover {
     opacity: 0.9;
     transform: translateY(-1px);
+    transition: transform var(--hover-transition), opacity var(--hover-transition);
 }
 
 /* Footer styles */
 .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
-    transition: background-color var(--transition-speed);
 }
 
 .footer-link {
     color: var(--text-secondary);
-    transition: color var(--transition-speed);
 }
 
 .footer-link:hover {
     color: var(--primary-color);
+    transition: color var(--hover-transition);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .video-container {
-        /* Fallback for browsers that don't support dvh */
         height: calc(100vh - var(--header-height));
-        /* Modern browsers will use this */
         height: calc(100dvh - var(--header-height));
     }
 
@@ -284,11 +311,11 @@ body {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: all var(--transition-speed);
 }
 
 .theme-toggle:hover {
     background: var(--bg-secondary);
+    transition: background-color var(--hover-transition);
 }
 
 /* Helper classes */
@@ -298,14 +325,6 @@ body {
 
 .text-secondary {
     color: var(--text-secondary);
-}
-
-.bg-primary {
-    background-color: var(--bg-primary);
-}
-
-.bg-secondary {
-    background-color: var(--bg-secondary);
 }
 
 /* Accessibility improvements */
@@ -326,6 +345,7 @@ body {
     box-shadow: 0 0 0 2px var(--primary-color);
 }
 
+/* Dark mode image handling */
 @media (prefers-color-scheme: dark) {
     .dark img.dark\:block {
         display: block;
@@ -335,7 +355,7 @@ body {
     }
 }
 
-/* Light mode explicit beállítások */
+/* Light mode image handling */
 .light img.dark\:block {
     display: none;
 }
