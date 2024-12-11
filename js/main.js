@@ -150,26 +150,24 @@ class FormManager {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        // Disable the submit button during submission
         if (submitButton) submitButton.disabled = true;
 
         try {
-            // Validate form data
             if (!this.validateForm(data)) {
-                throw new Error('Please fill in all required fields.');
+                // Use language manager to get translated message
+                throw new Error(window.languageManager.getNestedTranslation('contact.form.messages.required'));
             }
 
-            // Here you would typically send the data to your server
-            // For now, we'll just simulate a server request
             await this.simulateServerRequest(data);
             
-            this.showMessage('success', 'Message sent successfully!');
+            // Use language manager to get translated message
+            this.showMessage('success', window.languageManager.getNestedTranslation('contact.form.messages.success'));
             form.reset();
         } catch (error) {
             console.error('Error submitting form:', error);
-            this.showMessage('error', error.message || 'Error sending message. Please try again.');
+            // Use language manager to get translated message
+            this.showMessage('error', error.message || window.languageManager.getNestedTranslation('contact.form.messages.error'));
         } finally {
-            // Re-enable the submit button
             if (submitButton) submitButton.disabled = false;
         }
     }

@@ -82,6 +82,11 @@
                 "name": "Az Ön neve",
                 "email": "Az Ön email címe",
                 "message": "Írja ide üzenetét..."
+            },
+            "messages": {
+                "required": "Kérjük, töltse ki az összes kötelező mezőt.",
+                "success": "Üzenet sikeresen elküldve!",
+                "error": "Hiba az üzenet küldése során. Kérjük, próbálja újra."
             }
         }
     },
