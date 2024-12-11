@@ -43,8 +43,14 @@ class LanguageManager {
     updateContent() {
         document.querySelectorAll('[data-lang-key]').forEach(element => {
             const key = element.dataset.langKey;
-            const translation = this.getNestedTranslation(key);
+            let translation = this.getNestedTranslation(key);
+            
             if (translation) {
+                if (key === 'footer.copyright') {
+                    const currentYear = new Date().getFullYear();
+                    translation = translation.replace('{year}', currentYear);
+                }
+
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translation;
                 } else if (element.tagName === 'IMG') {

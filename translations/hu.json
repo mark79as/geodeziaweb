@@ -98,6 +98,6 @@
         "contact": {
             "title": "Kapcsolat"
         },
-        "copyright": "© 2024 Geodézia Kft. Minden jog fenntartva."
+        "copyright": "© 2024-{year} Geodézia Kft. Minden jog fenntartva."
     }
 }

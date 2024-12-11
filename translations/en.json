@@ -98,6 +98,6 @@
         "contact": {
             "title": "Contact"
         },
-        "copyright": "© 2024 Geodézia Ltd. All rights reserved."
+        "copyright": "© 2024-{year} Geodézia Ltd. All rights reserved."
     }
 }
