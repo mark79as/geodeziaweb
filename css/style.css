@@ -8,6 +8,19 @@
     --header-height: 76px;
 }
 
+body,
+p,
+h1, h2, h3, h4, h5, h6,
+input,
+textarea,
+label,
+.form-input,
+.service-card,
+.project-card,
+.stat-card {
+    color: var(--text-primary);
+}
+
 /* Dark theme variables */
 .dark {
     --bg-primary: #111827;
