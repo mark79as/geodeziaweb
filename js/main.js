@@ -69,7 +69,7 @@ class LanguageManager {
     }
 
     updateLanguageButton() {
-        /* 
+        /*
         const currentLangBtn = document.querySelector('.current-language');
         if (currentLangBtn) {
             currentLangBtn.textContent = this.currentLang.toUpperCase();
