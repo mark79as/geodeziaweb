@@ -4,11 +4,6 @@
         "description": "Professzionális földmérési és térképészeti szolgáltatások",
         "logoAlt": "Geodézia Kft. logó"
     },
-    "languages": {
-        "hungarian": "Magyar",
-        "english": "English",
-        "russian": "Русский"
-    },
     "nav": {
         "home": "Főoldal",
         "services": "Szolgáltatások",

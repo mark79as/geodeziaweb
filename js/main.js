@@ -1,4 +1,3 @@
-// Language manager class
 class LanguageManager {
     constructor() {
         this.currentLang = localStorage.getItem('language') || 'hu';
@@ -330,7 +329,7 @@ class VideoManager {
 
 // Initialize everything when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.languageManager = new LanguageManager();
+    // window.languageManager = new LanguageManager(); // temporarily disabled
     window.themeManager = new ThemeManager();
     window.formManager = new FormManager();
     window.scrollManager = new ScrollManager();
@@ -350,7 +349,7 @@ if ('serviceWorker' in navigator) {
 
 // Export for module usage if needed
 export {
-    LanguageManager,
+    // LanguageManager, // temporarily disabled
     ThemeManager,
     FormManager,
     ScrollManager,

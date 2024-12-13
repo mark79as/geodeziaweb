@@ -4,11 +4,6 @@
         "description": "Professional land surveying and cartography services",
         "logoAlt": "Geodézia Ltd. logo"
     },
-    "languages": {
-        "hungarian": "Magyar",
-        "english": "English",
-        "russian": "Русский"
-    },
     "nav": {
         "home": "Home",
         "services": "Services",

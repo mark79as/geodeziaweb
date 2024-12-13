@@ -98,7 +98,7 @@ body {
     height: var(--header-height);
 }
 
-/* Language selector styles */
+/* Language selector styles - temporarily disabled
 .language-selector {
     position: relative;
     display: inline-block;
@@ -156,6 +156,7 @@ body {
     color: white;
     transition: background-color var(--hover-transition), color var(--hover-transition);
 }
+*/
 
 /* Video container styles */
 .video-container {

@@ -4,11 +4,6 @@
         "description": "Профессиональные услуги в области геодезии и картографии",
         "logoAlt": "Логотип Геодезия ООО"
     },
-    "languages": {
-        "hungarian": "Magyar",
-        "english": "English",
-        "russian": "Русский"
-    },
     "nav": {
         "home": "Главная",
         "services": "Услуги",
