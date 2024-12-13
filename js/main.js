@@ -1,41 +1,42 @@
 class LanguageManager {
     constructor() {
-        this.currentLang = localStorage.getItem('language') || 'hu';
+        this.currentLang = 'hu';
         this.translations = {};
         this.init();
     }
 
     async init() {
-        await this.loadTranslations(this.currentLang);
-        this.updateContent();
-        this.setupEventListeners();
-        this.updateLanguageButton();
-        document.documentElement.lang = this.currentLang;
+        try {
+            await this.loadTranslations(this.currentLang);
+            this.updateContent();
+            this.setupEventListeners();
+            // this.updateLanguageButton(); // Temporarily disabled
+            document.documentElement.lang = this.currentLang;
+        } catch (error) {
+            console.error('Initialization error:', error);
+        }
     }
 
     async loadTranslations(lang) {
         try {
             const response = await fetch(`translations/${lang}.json`);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            this.translations = await response.json();
-        } catch (error) {
-            console.error('Error loading translations:', error);
-            // Fallback to Hungarian if translation loading fails
-            if (lang !== 'hu') {
-                await this.loadTranslations('hu');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            this.translations = await response.json();
+            console.log('Translations loaded successfully');
+        } catch (error) {
+            console.error(`Error loading translations for ${lang}:`, error);
+            throw error;
         }
     }
 
     async changeLanguage(lang) {
-        const languageOptions = document.querySelector('.language-options');
-        languageOptions?.classList.remove('show');
-        
         await this.loadTranslations(lang);
         this.currentLang = lang;
         localStorage.setItem('language', lang);
         this.updateContent();
-        this.updateLanguageButton();
+        // this.updateLanguageButton(); // Temporarily disabled
         document.documentElement.lang = lang;
     }
 
@@ -57,6 +58,8 @@ class LanguageManager {
                 } else {
                     element.textContent = translation;
                 }
+            } else {
+                console.warn(`No translation found for key: ${key}`);
             }
         });
     }
@@ -66,14 +69,16 @@ class LanguageManager {
     }
 
     updateLanguageButton() {
+        /* 
         const currentLangBtn = document.querySelector('.current-language');
         if (currentLangBtn) {
             currentLangBtn.textContent = this.currentLang.toUpperCase();
         }
+        */
     }
 
     setupEventListeners() {
-        // Language selector functionality
+        /* 
         const languageBtn = document.querySelector('.language-btn');
         const languageOptions = document.querySelector('.language-options');
 
@@ -94,6 +99,7 @@ class LanguageManager {
                 });
             });
         }
+        */
     }
 }
 
@@ -329,7 +335,7 @@ class VideoManager {
 
 // Initialize everything when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // window.languageManager = new LanguageManager(); // temporarily disabled
+    window.languageManager = new LanguageManager();
     window.themeManager = new ThemeManager();
     window.formManager = new FormManager();
     window.scrollManager = new ScrollManager();
@@ -349,7 +355,7 @@ if ('serviceWorker' in navigator) {
 
 // Export for module usage if needed
 export {
-    // LanguageManager, // temporarily disabled
+    LanguageManager,
     ThemeManager,
     FormManager,
     ScrollManager,
